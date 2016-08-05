@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+	<div id="headpic"
+		style="border-style: solid; width: 100px; height: 100px; background-size: 100px 100px;">
+		<p>将您本地的文件拖拽到这里</p>
+	</div>
+	<script>
+        var headpic = document.getElementById("headpic");
+        //阻止事件蔓延
+        headpic.ondragover = handleDrag;
+        function handleDrag(e) {　　
+            e.preventDefault();
+        }
+　　　　//图片在框中放下时触发
+        headpic.ondrop = function (e) {
+            var files = e.dataTransfer.files;
+            //显示这个图片为div的背景
+            var r=new FileReader();
+            r.onload=function(re){
+                 headpic.innerHTML="";
+                 headpic.style.backgroundImage="url("+re.target.result+")";
+            }
+            r.readAsDataURL(files[0]);
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

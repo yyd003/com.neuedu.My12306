@@ -1,0 +1,33 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+#header{
+  width: 100%;
+  height: 40px;
+}
+#menu{
+  width: 18%;
+  height: 400px;
+}
+#content{
+  width: 78%;
+  height:600px;
+}
+#footer{
+  width: 100%;
+  height: 80px;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.cl{
+	clear: both;
+}
+.box{
+	border: solid 1px black;
+	margin: 5px;
+}
